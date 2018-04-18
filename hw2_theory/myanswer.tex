@@ -1,0 +1,235 @@
+\documentclass[12pt]{article}
+\author{Samuel Young}
+\date{April 16, 2018}
+\title{HW 2 theroy}
+\begin{document}
+
+\maketitle
+
+Problem  1:
+Input: n - an integer higher then 2
+
+Recursive definition of algorithm:
+$$j=3,..,n$$
+$$f_1=1$$
+$$f_2=1$$
+$$f_j=f_j -_1+f_j -_2$$
+
+output:
+ single integer: $f_n$
+
+bash-like pseudo-code
+
+FibonacciSeq(n)\\
+
+f1= 1\\
+
+f2= 1\\
+
+i=0\\
+
+while i $\leq$ n\\
+
+do \\
+
+\hspace{1cm}  if f1 $>$ f2 then\\
+
+\hspace{2cm}{f1 = f1 + f2}\\
+
+\hspace{2cm}{f1}\\
+
+\hspace{1cm}{else}\\ 
+
+\hspace{2cm}{f2= f2 + f1}\\
+
+\hspace{2cm}{f2}\\
+
+\hspace{1cm}{fi}\\
+
+\hspace{1cm}{i=1+i}\\
+
+done\\
+
+if f2 $<$ f1 then\\
+
+\hspace{1cm}{return f1}\\
+
+else\\
+
+\hspace{1cm}{return f2}\\
+
+fi\\
+
+Problem 2:
+
+input:
+w  is an n by n adjacency matrix, with element $w_j_k$ containing the weight ofedge from vertex k to j,or INF if there is no edge, we always have $w_k_k = 0$
+
+Recursive definition of the algorithm::
+
+$$j = 1,..,n$$
+$$d_j = \infty$$
+$$d_1=0$$
+$$d_j= min_(1<=k<=j) d_k+w_(kj)$$
+
+output:
+integer $d_j$ for all j in 1,..,n
+
+bash-like pseudo-code
+
+BellmanFord(w)\\
+
+for j in n\\
+
+do\\
+
+\hspace{1cm}{d[0,j] = INF}\\
+
+done\\
+
+for k in n\\
+
+do\\
+
+\hspace{1cm}{d[k,k]=0}\\
+
+done\\
+
+for j in n \\
+
+do\\ 
+
+\hspace{1cm}{for k in n}\\ 
+
+\hspace{1cm}{do}\\
+
+\hspace{2cm}{if [w[k,j] $! =$  INF] then}\\
+
+\hspace{3cm}{d[k,j] = d[k-1,j]}\\
+
+\hspace{3cm}{if [d[k,j] $>$  d[k-1] + w[kj]]then }\\
+
+\hspace{4cm}{d[j] = d[k-1] + w[k,j]}\\
+
+\hspace{3cm}{fi}\\
+
+\hspace{2cm}{fi}\\
+
+\hspace{1cm}{do}\\
+  
+\hspace{2cm}{if [w[k,j] $! =$  INF] then }\\
+  
+\hspace{3cm}{d[k,j] = d[k-1,j]}\\
+
+\hspace{3cm}{if [d[k,j] $>$ d[k]+w[k,j]] then}\\
+
+\hspace{4cm}{if 1$\leq$ k $\leq$ j then}\\
+
+\hspace{5cm}{d[j]=d[k-1]+w[k,j]}\\
+
+\hspace{4cm}{fi}\\
+
+\hspace{3cm}{fi}\\
+
+\hspace{2cm}{fi}\\
+
+\hspace{1cm}{done}\\
+
+\hspace{1cm}{return d[j]}\\
+
+done\\
+
+problem 3
+Input:
+L - a postive integer 
+n - a postive integer
+V - an array of n postive integers
+w - an array of n postive integers, each <=l
+
+recursive defintuon of the algorithum:
+
+$m_(jk) = 0$ for  $j=0,..,L$ and $k = 0$\\
+
+$m_(jk) = 0$ for $j=0$ and $k =1,..,n$\\ 
+
+$m_(jk) = m__j,_k-_1$ if $j-w_k < 0$ for $j=1,..,K$ and $k = 1,..,n$\\
+
+$m(jk) = max(m_j-_w_k,_k-_1) +V_k,m_j_,_k-_1)$ if $j-w_k>=0$\\
+
+for $j=1,..,L$ and $k=1,..,n$\\
+
+a single integer: $m_L,_n$
+
+bash-like pseudo-code\\
+
+unknownAlgotrhim(L,n,V,w)\\
+
+for j in range(0,L)\\
+
+do \\
+
+\hspace{1cm}{m[j,0]=0}\\
+
+done\\
+
+for k in range(0,n)\\
+
+do\\
+
+\hspace{1cm}{m[0,k]=0}\\
+
+done \\
+
+for j in k \\
+
+do \\
+
+\hspace{1cm}{for k in n}\\
+
+\hspace{1cm}{do}\\
+
+\hspace{2cm}{if [m[j,k]==m[j,k-1]] then}\\
+
+\hspace{3cm}{if [j - w[k] $<$ 0] then}\\
+
+\hspace{4cm}{m[j,] = j- w[k]}\\
+
+\hspace{3cm}{fi}\\
+
+\hspace{2cm}{fi}\\
+
+\hspace{1cm}{done}\\
+
+done\\
+
+for j in L\\
+
+do\\
+
+\hspace{1cm}{for k in n} \\
+
+\hspace{1cm}{do} \\
+
+\hspace{2cm}{if [m[j,k]$<$ m[[[j-wk,k-1]+V[k]],m[j,k-1]]] then}\\
+
+\hspace{3cm}{m[j,k] = m[[[k-wk,k-1+V[k]] ,m[j,k-1]]]}\\
+
+\hspace{3cm}{if [j-wk $\ge$ 0 ] then}\\
+
+\hspace{4cm}{m[,wk]=j-wk}\\
+
+\hspace{3cm}{fi}\\
+
+\hspace{2cm}{fi}\\
+
+\hspace{1cm}{done}\\
+
+done\\
+
+return m[j,k]\\
+
+\end{document}
+
+
+
+
