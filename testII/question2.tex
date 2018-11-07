@@ -11,18 +11,32 @@
    There are just about 72 possible ALL and AML data point within the data set. There are a total 47 ALL in the dataset and 25 of the AML in the same data set. So the genes are the rows and the columns are the patients. So first I did a wordcount on the file to see how many rows there are and then minus the 7219-1 to get a close approximation to the numbers there are 72* 7218 differnet genes to look at for the data set.
  
   \part{2.B}
-                  I orignial thought that there were at least 500-1000 of these genes had a greater than or equal to 2.000 p-value with a degree of freedom of 60, It was any assumption, made based on t-chart that I made base on the data that was given. But considering there are to different sigigincat factor that can still be held true.Isn't the t-value a close approxiamation of where the data lie with a standard devations lie.That is the reason why based upon the graph and the intial t-value with a siginificates of $\alpha=.05$ is super close to a significants of 2 standard deviations form the value.It was solely base on one data set when what I should have of been doing it is basing upon both data sets and I should of tried to find a collective average of all the sets then taken that and found the t-values based on the siginigcants. That were given and that would of increased the p-value for both charts. Now based on those two differing level instead of using one. It was  appearentlty closer to 2072 genes a within this p-value range I got that was based on  the exact way you put it $(.03=(\frac{2072}{7218*72})*100))$ is each to 28 percent of all the lines has a siginificant. What is 30 precent a close apporximate to 28 precent. A p-value is a value that is a statistcal test that is shown with $1 - \int_{-\infty}^{cv} \mathrm{f(t)}$.
+   I've  put it throught the algorithum multply times have recieved there is about 3934000-3936999 of them that are less than .05 that at the intial p-value. In all cases there is something like 721800 possible there is about half of the time shuffle are less or .05=$\alpha$ 
+                 
 \part{2.C}
-      In this part where were told to make a any algorthim using permutaion.py. In which, I removed th    e first time you called the absulote value and got half that exact same amount. -1.51 as the value f    or the oringal so then you have to do that absolute value of that inorder for you to determine that     the grah is in representation of both sides. 3.02 when you keep the absolute value. but because you     are looking at both tails of the graph in this one you will obtain a more bell-like graph in the cas    e that now you are trying to find all the values that are outside of the graph in which when  you ru    n this like 3-5 times you obtain an estimated 968 out of all the genes that are similar.
-  \part{2.D}
-                  I was able to obtain a graph but it appears to be right skewed base on the fact that it is only a one sided graphical representation of the data. With using only genes any number of list to generate this graph  as any input.
+    So each curve is bases on the intial thousand that is created within the simulated t values. The reason for this is to keep it simpilicity and it will also vary within each shuffled version of the graph. Because of t obsevered is negative value there must also be a another positive value to balance out the curve. There is probabilty at least one graph that has siginificantly lowerer the $\alpha$.
                   \begin{figure}
-                  \includegraphics[width=\linewidth]{./Figure1.png}
-                  \caption{A one side permutantion test with a graphical reperesntation of a bell-like     curve.}
+                  \includegraphics[width=\linewidth]{./Figure-1.png}
+                  \caption{They are two side bell-like-curves with the observed t in red and green.}
                   \label{fig:graph1}
                   \end{figure}
-                   This graph \ref{fig:graph1} show that the absolute value when taken as the first number.
-\part{2.E}
-   So with with the permuatation data that I randomly shuffled around I was able to get much more clos    er to the .05 precent with a few tweaks to the intial values. Unforunately, my numbers do randomly s    hift around alot so there is always a chance of obtaining a prefect number,1.962, because the value     will variey 1.565 p-value closer and then there is also a chance of obtain a 3.765 p-value father aw    ay form the table. Another weird thing that i realized about my program is that It more closer to 10000 times rather then a thousand fold.
+
+                 \begin{figure}
+                 \includegraphics[width=\linewidth]{./Figure2.png}
+                 \caption{This is another two side bell-like-curve that is created with the t simulated values. t obsevered stay the same as before.}
+                \label{figure:graph2}
+                 \end{figure} 
+                
+
+                  \begin{figure}
+                 \includegraphics[width=\linewidth]{./Figure3.png}
+                 \caption{This is another two side bell-like-curve that is created with the t simulated values. t obsevered stay the same as before.}
+                \label{figure:graph3}
+                \end{figure} 
+  \part{2.D}
+     Based on the result there is at least 7030 genes have a value that is greater then .025 and less than this value -.025. so that means that there is about a 98 $\%$ of these genes that show with at least alternative points. 
+  \part{2.E}
+ The permuntation test results has a varity of randomized assorted ways to extrapolate the data one of which is that the one tailed has about 33934000-3936999 and is closely linked to about 45 $\%$  of the total data. If we use the both tails to compare the results, I would get anywhere around this 482000-488999 of the data was less than .025. Therefore the data  is about a 6.7-6.8 $\%$ of finding that the numbers are within a relative close margin of data to both 2.5 $\%$ without understating the data.  Then the regular two-sample T-test in which doesn't vary and ulitmatlely it has a 7030 genes that is closer to the out of 7128 genes that was read throught proves that when looking at the ends it allows you to receive that data at about 1.375, and in which is undetstates the data that there is about  2.5 $\%$ of it actual within that slot.  
+
 \end{document}
 
